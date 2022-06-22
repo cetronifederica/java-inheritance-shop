@@ -34,6 +34,7 @@ public class Catalogo {
 
 					Televisori televisori = new Televisori(nome, marca, prezzo, iva, 0, dimensioni, tipologia);
 					televisori.getCodice();
+					System.out.println("Prodotto inserito: " + televisori.toString());
 					break;
 
 				case "Smartphone":
@@ -52,6 +53,7 @@ public class Catalogo {
 							memoriaSmart);
 					smartphone.getCodice();
 					smartphone.getImei();
+					System.out.println("Prodotto inserito: " + smartphone.toString());
 					break;
 
 				case "Cuffie":
@@ -71,6 +73,7 @@ public class Catalogo {
 					Cuffie cuffie = new Cuffie(nomeCuffie, marcaCuffie, prezzoCuffie, ivaCuffie, 0, colore,
 							tipologiaCuffie);
 					cuffie.getCodice();
+					System.out.println("Prodotto inserito: " + cuffie.toString());
 					break;
 
 				}
