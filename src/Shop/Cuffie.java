@@ -7,12 +7,12 @@ public class Cuffie extends Prodotto {
 	private String tipologiaCuffie;
 
 	// costruttore
-	public Cuffie(int codice, String nome, String marca, double prezzo, double iva, String colore,
+
+	public Cuffie(String nome, String marca, double prezzo, int iva, int codice, String colore,
 			String tipologiaCuffie) {
-		super(codice, nome, marca, prezzo, iva);
+		super(nome, marca, prezzo, iva, codice);
 		this.colore = colore;
 		this.tipologiaCuffie = tipologiaCuffie;
-
 	}
 
 	// metodi
@@ -32,4 +32,8 @@ public class Cuffie extends Prodotto {
 		this.tipologiaCuffie = tipologiaCuffie;
 	}
 
+	@Override
+	public String toString() {
+		return super.toString() + " " + colore + " " + tipologiaCuffie;
+	}
 }

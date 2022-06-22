@@ -1,19 +1,20 @@
 package Shop;
 
 import java.text.DecimalFormat;
+import java.util.Random;
 
 public class Prodotto {
-
+	Random rand = new Random();
 	// attributi
-	private int codice;
 	private String nome;
 	private String marca;
 	private double prezzo;
-	private double iva;
+	private int iva;
+	private int codice;
 
 	// costruttore
 
-	public Prodotto(int codice, String nome, String marca, double prezzo, double iva) {
+	public Prodotto(String nome, String marca, double prezzo, int iva, int codice) {
 		this.codice = codice;
 		this.iva = iva;
 		this.marca = marca;
@@ -51,22 +52,26 @@ public class Prodotto {
 		return iva;
 	}
 
-	public void setIva(double iva) {
+	public void setIva(int iva) {
 		this.iva = iva;
 	}
 
 	public int getCodice() {
-		return codice;
+		return codice = rand.nextInt(1000) + 1;
 	}
 
 	// metodo prezzo comprensivo di iva formattato
 
 	DecimalFormat df = new DecimalFormat("#0.00€");
 
-	String calcoloPrezzoConIva() {
+	String prezzoIva() {
 		double prezzoIva = (prezzo * iva) / 100 + prezzo;
 
 		return df.format(prezzoIva);
 	}
 
+	@Override
+	public String toString() {
+		return nome + " " + marca + " " + codice + " " + prezzo + " " + iva;
+	}
 }

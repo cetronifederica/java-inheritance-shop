@@ -3,16 +3,14 @@ package Shop;
 public class Televisori extends Prodotto {
 
 	// attributi televisori
-	private double dimensioni;
+	private int dimensioni;
 	private String tipologia;
 
 	// costruttore
-	public Televisori(int codice, String nome, String marca, double prezzo, double iva, double dimensioni,
-			String tipologia) {
-		super(codice, nome, marca, prezzo, iva);
+	public Televisori(String nome, String marca, double prezzo, int iva, int codice, int dimensioni, String tipologia) {
+		super(nome, marca, prezzo, iva, codice);
 		this.dimensioni = dimensioni;
 		this.tipologia = tipologia;
-
 	}
 
 	// metodi
@@ -20,7 +18,7 @@ public class Televisori extends Prodotto {
 		return dimensioni;
 	}
 
-	public void setDimensioni(double dimensioni) {
+	public void setDimensioni(int dimensioni) {
 		this.dimensioni = dimensioni;
 	}
 
@@ -32,5 +30,9 @@ public class Televisori extends Prodotto {
 		this.tipologia = tipologia;
 	}
 
-	
+	@Override
+	public String toString() {
+		return super.toString() + " " + dimensioni + " " + tipologia;
+	}
+
 }
