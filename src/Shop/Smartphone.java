@@ -12,7 +12,7 @@ public class Smartphone extends Prodotto {
 	// costruttore
 	public Smartphone(String nome, String marca, double prezzo, int iva, int codice, int imei, int memoria) {
 		super(nome, marca, prezzo, iva, codice);
-		this.imei = imei;
+		this.imei = rand.nextInt();
 		this.memoria = memoria;
 	}
 
@@ -26,7 +26,7 @@ public class Smartphone extends Prodotto {
 	}
 
 	public int getImei() {
-		return imei = rand.nextInt();
+		return imei;
 	}
 
 	@Override

@@ -57,14 +57,14 @@ public class Prodotto {
 	}
 
 	public int getCodice() {
-		return codice = rand.nextInt(1000) + 1;
+		return codice;
 	}
 
 	// metodo prezzo comprensivo di iva formattato
 
 	DecimalFormat df = new DecimalFormat("#0.00€");
 
-	String prezzoIva() {
+	public String prezzoIva() {
 		double prezzoIva = (prezzo * iva) / 100 + prezzo;
 
 		return df.format(prezzoIva);
@@ -72,6 +72,6 @@ public class Prodotto {
 
 	@Override
 	public String toString() {
-		return nome + " " + marca + " " + codice + " " + prezzo + " " + iva;
+		return nome + " " + marca + " " + codice + " " + prezzoIva();
 	}
 }

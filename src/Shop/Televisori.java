@@ -4,13 +4,13 @@ public class Televisori extends Prodotto {
 
 	// attributi televisori
 	private int dimensioni;
-	private String tipologia;
+	private boolean smart;
 
 	// costruttore
-	public Televisori(String nome, String marca, double prezzo, int iva, int codice, int dimensioni, String tipologia) {
+	public Televisori(String nome, String marca, double prezzo, int iva, int codice, int dimensioni, boolean smart) {
 		super(nome, marca, prezzo, iva, codice);
 		this.dimensioni = dimensioni;
-		this.tipologia = tipologia;
+		this.smart = smart;
 	}
 
 	// metodi
@@ -22,17 +22,22 @@ public class Televisori extends Prodotto {
 		this.dimensioni = dimensioni;
 	}
 
-	public String isTipologia() {
-		return tipologia;
+	public boolean isSmart() {
+		return smart;
 	}
 
-	public void setTipologia(String tipologia) {
-		this.tipologia = tipologia;
+	public void setSmart(boolean smart) {
+		this.smart = smart;
 	}
 
 	@Override
 	public String toString() {
-		return super.toString() + " " + dimensioni + " " + tipologia;
+		String x = super.toString() + " " + dimensioni;
+		if (smart = true) {
+
+		}
+		return x;
+
 	}
 
 }

@@ -18,7 +18,6 @@ public class Catalogo {
 			int scelta = scan.nextInt();
 
 			if (scelta == 1) {
-
 				System.out.println("Inserisci il nome: ");
 				String nome = scan.nextLine();
 				System.out.println("Inserisci la marca: ");
@@ -28,11 +27,12 @@ public class Catalogo {
 				System.out.println("Inserisci le dimensioni: ");
 				int dimensioni = scan.nextInt();
 				System.out.println("Inserisci il prezzo: ");
-				double prezzo = scan.nextDouble();
+				double prezzo = Double.parseDouble(scan.nextLine());
+
 				System.out.println("Inserisci l'iva: ");
 				int iva = scan.nextInt();
 
-				Televisori televisori = new Televisori(nome, marca, prezzo, iva, 0, dimensioni, tipologia);
+				Televisori televisori = new Televisori(nome, marca, prezzo, iva, 0, dimensioni, true);
 				televisori.getCodice();
 				System.out.println("Prodotto inserito: " + televisori.toString());
 			} else if (scelta == 2) {
@@ -75,14 +75,6 @@ public class Catalogo {
 			}
 
 		}
-
-		/*
-		 * System.out.println("Il nostro catalogo: "); String intestazione =
-		 * String.format("%15s %15s %15s", "Marca", "Nome", "Prezzo");
-		 * System.out.println(intestazione); for (int i = 0; i < catalogo.length; i++) {
-		 * String infoProdotto = String.format("%15s %15s %15s", catalogo[i].marca,
-		 * catalogo[i].nome, catalogo[i].prezzo); System.out.println(infoProdotto);
-		 */
 
 		scan.close();
 	}
